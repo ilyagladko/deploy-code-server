@@ -18,6 +18,8 @@ COPY deploy-container/rclone-tasks.json /tmp/rclone-tasks.json
 
 # Fix permissions for code-server
 RUN sudo chown -R coder:coder /home/coder/.local
+
+RUN sudo chown -R coder:coder /etc
 RUN echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
 RUN sudo sysctl -p
 
