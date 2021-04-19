@@ -78,4 +78,6 @@ fi
 
 echo "[$PREFIX] Starting code-server..."
 # Now we can run code-server with the default entrypoint
-/usr/bin/entrypoint.sh --bind-addr 0.0.0.0:8080 $START_DIR
+# code-server --host 0.0.0.0 --port $UID --proxy-domain $UID.domain.tld
+
+/usr/bin/entrypoint.sh --bind-addr 0.0.0.0:8080 --proxy-domain $UID.domain.tld $START_DIR
